@@ -697,7 +697,7 @@
     lazyInit();
     var parts = XRegExp.exec(address,Addr_Match.informal_address);
     return parser.normalize_address(parts);
-  }; 
+  };
   parser.parsePoAddress = function(address){
     lazyInit();
     var parts = XRegExp.exec(address,Addr_Match.po_address);
@@ -705,9 +705,9 @@
   };
   parser.parseLocation = function(address){
     lazyInit();
-    if (XRegExp(Addr_Match.corner,'xi').test(address)) {
-        return parser.parseIntersection(address);
-    }
+    // if (XRegExp(Addr_Match.corner,'xi').test(address)) {
+    //     return parser.parseIntersection(address);
+    // }
     if (XRegExp('^'+Addr_Match.po_box,'xi').test(address)){
       return parser.parsePoAddress(address);
     }
